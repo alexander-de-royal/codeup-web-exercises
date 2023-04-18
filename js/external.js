@@ -84,3 +84,4 @@ let cartSize = prompt("How many items")
 alert("Customer can have discount: " + ((isPremiumMember || cartSize > 2) && isOfferValid));
 
 // alert("Customer can have discount: " + (cartSize >= 2 && isOfferValid || isPremiumMember));
+
