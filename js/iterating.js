@@ -69,33 +69,63 @@
     console.log(first(1,2,3,4,5,6,7,8));
     console.log(first(1,2,3,4,5,6,7,8));
 
-
 })();
-(function(){
-    //Declaring an array.
-    let emptyArr = [];
-    console.log(Array.isArray(emptyArr));
+// (function(){
+//     //Declaring an array.
+//     let emptyArr = [];
+//     console.log(Array.isArray(emptyArr));
+//
+//     let cheeses = ["Cheddar", "String", "Wensleydale"]; //This array contains 3 elements
+//
+//     let falsyValues = [0, "", false, undefined, null]; // We can collect different data types using arrays.
+//     // However, this can lead to some unintended results with a looping/iterative structure
+//     // console.log(cheeses[1]) //this will print the second element in our cheese array.
+//     // console.log(cheeses.indexOf("Cheddar")); //this will return and print 0
+//     // console.log(cheeses[0].indexOf("Brie")); //This returns -1
+//     // console.log(cheeses.indexOf("White Cheddar")); // This will return and print -1
+//     // console.log(cheeses.length);
+//     //
+//     // for(let i = 0; i < cheeses.length; i++){
+//     //     console.log(cheeses[i])
+//     // }
+//     // for(let i = cheeses.length - 1; i >= 0; i--){
+//     //     console.log(cheeses[i]);
+//     // }
+//     //For each version
+//     cheeses.forEach(function(cheese){
+//         console.log(cheese);
+//     })
+// })();
 
-    let cheeses = ["Cheddar", "String", "Wensleydale"]; //This array contains 3 elements
+    // const cheese = ['brie', 'cheddar', 'jack', 'string', 'bleu'];
+    // console.log(cheese);
+    // cheese.push('push'); //add cheese in the end
+    // console.log(cheese);
+    // cheese.pop('hummer');
+    // console.log(cheese);
+    // cheese.shift();
+    // console.log(cheese);
+    // let myFavCheeses = cheese.slice(cheese.indexOf("muenster"), cheese.indexOf("kraft American singles"));
+    // console.log(myFavCheeses);
 
-    let falsyValues = [0, "", false, undefined, null]; // We can collect different data types using arrays.
-    // However, this can lead to some unintended results with a looping/iterative structure
-    // console.log(cheeses[1]) //this will print the second element in our cheese array.
-    // console.log(cheeses.indexOf("Cheddar")); //this will return and print 0
-    // console.log(cheeses[0].indexOf("Brie")); //This returns -1
-    // console.log(cheeses.indexOf("White Cheddar")); // This will return and print -1
-    // console.log(cheeses.length);
-    //
-    // for(let i = 0; i < cheeses.length; i++){
-    //     console.log(cheeses[i])
-    // }
-    // for(let i = cheeses.length - 1; i >= 0; i--){
-    //     console.log(cheeses[i]);
-    // }
-    //For each version
-    cheeses.forEach(function(cheese){
-        console.log(cheese);
-    })
+    let csvNames = 'David, Cody, Jeremy, Codey The Duck';
+    let names = csvNames.split(",");
+    console.log(names);
+
+    csvNames = names.reverse().join(",");
+    console.log(csvNames);
+
+    let alphaTeam = ["david", "jay", "javier", "justin", "laura", "cody", "jeremy", "trevor"];
+    let goldTeam = ["kenneth", "farrukh", "lola", "issac", "steve", "jason", "Gonzalo", "johnny"];
+
+    let staff = alphaTeam.concat(goldTeam);
+
+    function removeAtIndex(array, index){
+        let arr1 = array.slice(0,index);
+        let arr2 = array.slice(index + 1);
+    }
 
 
-})();
+
+
+
