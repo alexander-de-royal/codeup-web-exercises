@@ -1,6 +1,6 @@
 (function() {
     "use strict";
-
+    alert("hey");
     /**
      * TODO:
      * Create an object with firstName and lastName properties that are strings
@@ -11,7 +11,14 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-
+    let person = {
+        firstName: "Cody",
+        lastName: "Hastings",
+        sayHello: function () {
+            return "Hello from " + this.firstName + " " + this.lastName + "!";
+        }
+    }
+    console.log()
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -35,13 +42,33 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
-
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
-
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+    // for(let i = 0; i < 3; i++){
+    //     console.log(shoppers[0].name);
+    //     if(shoppers[0].name > 200){
+    //         console.log("Amount before discount $" + shoppers[0].amount);
+    //         var discountAmt = shoppers[0].amount * 0.12;
+    //         console.log("Amount of discount" + discountAmt.toFixed(2));
+    //         console.log("Amount after discount " + (shoppers[0].amount - (discountAmt)));
+    //     } else {
+    //         console.log("No discount, aount due $" + shoppers[0].amount);
+    //     }
+    // }
+    shoppers.forEach(function(){
+        console.log(shoppers[0].name);
+        if(shoppers[0].name > 200){
+            console.log("Amount before discount $" + shoppers[0].amount);
+            var discountAmt = shoppers[0].amount * 0.12;
+            console.log("Amount of discount" + discountAmt.toFixed(2));
+            console.log("Amount after discount " + (shoppers[0].amount - (discountAmt)));
+        } else {
+            console.log("No discount, aount due $" + shoppers[0].amount);
+        }
+    });
     /** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
@@ -54,7 +81,36 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-
+    let books = [
+        {
+            title: "Brief History of time",
+            author: {
+                firstName: "Stephen",
+                lastName: "Hawking"
+            }
+        },
+        {
+            title: "The fellowship of the ring",
+            author: {
+                firstName: "John",
+                lastName: "Hawking"
+            }
+        },
+        {
+            title: "The Salmon of Doubt",
+            author: {
+                firstName: "Douglas",
+                lastName: "Adam"
+            }
+        },
+        {
+            title: "The invisible man",
+            author: {
+                firstName: "Herbert",
+                lastName: "Wells"
+            }
+        },
+    ]
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -79,7 +135,9 @@
      *      ---
      *      ...
      */
-
+    // books.forEach(function(book, index){
+    //     console.log("Book # " + (index + 1) + "\n" + "Title: " + book.title + "\n" + "Author " + book.author.firstName + " " + book.author.lastName);
+    // })
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -90,5 +148,27 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    function (title, firstName, lastName){
+        let bookObject = {
+            title: title,
+            author: {
+                firstName: firstName,
+                lastName: lastName
+            }
+        }
+        books.push(bookObject);
+    }
+
+    createBook("The Two Towers", "John", "Tolkien");
+
+
+    function showBookInfo(book){
+        return "title: " + book.title + "\n" + "Author " + book.author.firstName + " " + book.author.lastName
+    }
+
+    books.forEach(function(book, index){
+        console.log("Book # " + (index + 1) + "\n" + showBookInfo(book));
+    });
+
 
 })();
