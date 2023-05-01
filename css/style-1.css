@@ -1,0 +1,38 @@
+body{
+    font-family: "Corsiva Hebrew", sans-serif;
+    background: linear-gradient(to right, black, dimgrey);
+}
+h1, h4{
+    color: lightsalmon;
+}
+label{
+    color: salmon;
+}
+hr{
+    /*width: 100%;*/
+}
+::placeholder{
+    color: antiquewhite;
+}
+#container{
+    margin: 50px 50px;
+}
+select{
+    font-weight: bold;
+    font-size: 15px;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid rgba(0,0,0,0);
+    color: lightsalmon;
+}
+.button{
+    color: salmon;
+    font-weight: bold;
+    background-color: rgba(0,0,0,0);
+    width: 80px;
+    height: 40px;
+}
+button:hover{
+    cursor: pointer;
+    box-shadow: -2px -3px 5px white;
+    color: rgba(255,255,0,0.9);
+}
