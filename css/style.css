@@ -1,0 +1,27 @@
+#top-container{
+    margin: 30px 50px;
+}
+*{
+    font-family: "Corsiva Hebrew", sans-serif;
+}
+h1{
+    color: #FFC300;
+    font-family: "Academy Engraved LET", sans-serif;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 2.5rem;
+}
+h2 {
+    color: #FFC300;
+}
+p{
+    color: #33FF57;
+}
+body{
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+
+/**/
+
+
