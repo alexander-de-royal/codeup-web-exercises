@@ -9,18 +9,18 @@ a{
     text-decoration: none;
 }
 span{
-    color: darkblue;
+    color: midnightblue;
 }
 .header-icon{
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
 }
 #top-container{
     box-sizing: border-box;
     height: 750px;
     width: 100%;
-    background-color: #0093E9;
-    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    /*background-color: #0093E9;*/
+    /*background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);*/
 }
 #top-container h1{
     color: rgba(0,255,255,0.5);
@@ -39,7 +39,6 @@ span{
     align-items: center;
     list-style: none;
     font-size: 1.5rem;
-    /*padding-left: 30px;*/
 }
 .menu a{
     color: white;
@@ -47,9 +46,8 @@ span{
     transition: 0.2s ease;
 }
 .menu a:hover {
-    color: black;
+    color: dimgray;
 }
-
 .two-column{
     width: 100%;
     display: flex;
@@ -67,39 +65,38 @@ span{
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    padding-left: 150px;
+    padding-left: 180px;
     padding-top: 100px;
 }
 .two-column > .col-right{
     width: 50%;
     box-sizing: border-box;
-    padding: 0 0 0 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-right: 50px;
 }
 .banner-image{
-    width: 500px;
-    height: 500px;
+    width: 585px;
+    height: 585px;
 }
-
 /*EVERYTHING BELOW NAV BAR*/
 #second-container{
-    margin: 0 100px 0 100px;
+    margin-top: 50px;
+    width: 80%;
+    padding-left: 140px;
+    letter-spacing: 1px;
 }
-#second-container nav{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
+.our-plan{
+    letter-spacing: 30px;
+    padding-bottom: 20px;
 }
-
 .panel{
     background-color: white;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     border-radius: 20px;
     padding: 15px 25px;
@@ -109,7 +106,6 @@ span{
     text-decoration: none;
 }
 .pricing-plan{
-    border-bottom: black;
     font-size: 1.0rem;
     color: #0093E9;
     font-weight: bold;
@@ -117,10 +113,40 @@ span{
 .pricing-plan > li{
     color: black;
 }
-.pricing-img{
+.pricing-img-1{
     width: 200px;
     height: 200px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
+    padding-top: 90px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid lightgray;
+}
+.pricing-img-2{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+    padding-top: 2.5px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid lightgray;
+}
+.pricing-img-3{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+    padding-top: 90px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid lightgray;
+}
+.pricing-button{
+    border: 1px solid #9dd1ff;
+    border-radius: 10px;
+    color: #348efe;
+    display: inline-block;
+    padding: 15px 35px;
+    margin: 25px 0;
+}
+.pricing-button:hover, .pricing-button:focus{
+    background-color: #e1f1ff;
 }
 ul, ol {
     list-style-type: none;
