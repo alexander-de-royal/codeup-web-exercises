@@ -27,23 +27,40 @@
 // console.log(findFactors());
 
 // Warmup Exercise - 3
-function countEs(str){
-    if (typeof str === "string"){
-        let count = 0;
-        let normalizedStr = str.toLowerCase();
-        for(let i = 0; i < str.length; i++){
-            if (normalizedStr.charAt(i) === "e"){
-                count++;
-            }
-        }
-        return count;
-    } else {
-        return false;
-    }
-}
-console.log(countEs("Ease")); // returns 2;
-console.log(countEs("teleconference")); // returns 5;
-console.log(countEs("TOM")); // returns 0;
-console.log(countEs(true)); // returns false;
-console.log(countEs(['e', 'E'])); // returns false;
-console.log(countEs()); // returns false;
+// function countEs(str){
+//     if (typeof str === "string"){
+//         let count = 0;
+//         let normalizedStr = str.toLowerCase();
+//         for(let i = 0; i < str.length; i++){
+//             if (normalizedStr.charAt(i) === "e"){
+//                 count++;
+//             }
+//         }
+//         return count;
+//     } else {
+//         return false;
+//     }
+// }
+// console.log(countEs("Ease")); // returns 2;
+// console.log(countEs("teleconference")); // returns 5;
+// console.log(countEs("TOM")); // returns 0;
+// console.log(countEs(true)); // returns false;
+// console.log(countEs(['e', 'E'])); // returns false;
+// console.log(countEs()); // returns false;
+
+// Warmup Exercise - 4
+// function containsE(str){
+//     if (countEs(str) === false){
+//         return false;
+//     } else {
+//         return countEs(str) > 0;
+//     }
+// }
+// // Alternative Option
+// function containsE(str){
+//     if (typeof (str) !== "string"){
+//         return false;
+//     } else {
+//         return str.toLowerCase().indexOf("e") > -1;
+//     }
+// }

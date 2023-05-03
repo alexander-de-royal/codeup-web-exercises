@@ -2,15 +2,21 @@
 body{
     background-color: #0093E9;
     color: white;
+    margin: 0;
 }
 a{
     color: white;
+    text-decoration: none;
 }
 span{
     color: darkblue;
 }
+.header-icon{
+    width: 100px;
+    height: 100px;
+}
 #top-container{
-    margin: 0;
+    box-sizing: border-box;
     height: 750px;
     width: 100%;
     background-color: #0093E9;
@@ -19,56 +25,63 @@ span{
 #top-container h1{
     color: rgba(0,255,255,0.5);
     font-family: "Academy Engraved LET", sans-serif;
-    text-decoration: none;
     font-size: 3.0rem;
 }
-#top-container nav{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
-}
-#top-container > ul, li{
-    display: inline;
-    padding-left: 56px;
-    font-size: 1.5rem;
-}
-#top-container .left-navbar-heading{
-    text-decoration: none;
-}
-#top-container .navbar {
+.navbar{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px 30px 50px;
 }
-#top-container .navbar .right-navbar {
-    width: 400px;
+.menu{
     display: flex;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    font-size: 1.5rem;
+    /*padding-left: 30px;*/
 }
-#top-container .right-navbar a {
-    text-decoration: none;
-    font-size: 1.3rem;
+.menu a{
+    color: white;
+    margin: 0 20px;
+    transition: 0.2s ease;
 }
-#top-container .right-navbar a:hover {
-    color: yellow;
+.menu a:hover {
+    color: black;
 }
-.left-navbar{
-    margin-left: 50px;
-    margin-top: 50px;
-}
-.right-navbar{
-    margin-right: 50px;
-    margin-bottom: 20px;
-}
-.header-message{
-    font-size: 3rem;
-    font-weight: bolder;
-    padding-left: 100px;
-    padding-right: 1100px;
-    padding-top: 100px;
+
+.two-column{
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+.two-column > .col-left{
+    width: 50%;
+    box-sizing: border-box;
+    font-size: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
+    padding-left: 150px;
+    padding-top: 100px;
+}
+.two-column > .col-right{
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 0 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.banner-image{
+    width: 500px;
+    height: 500px;
 }
 
 /*EVERYTHING BELOW NAV BAR*/
