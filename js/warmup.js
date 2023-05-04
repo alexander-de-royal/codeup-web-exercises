@@ -64,3 +64,35 @@
 //         return str.toLowerCase().indexOf("e") > -1;
 //     }
 // }
+
+// Warmup Exercise - 5
+// My attempt
+// function fizzBuzz(input){
+//     for (let i = 0; i <= 100; i++){
+//         if (input % 3 === 0){
+//             return("Fizz");
+//         } else if (input % 5 === 0){
+//             return("Buzz");
+//         } else if (input % 3 === 0 && input % 5 === 0){
+//             return("Fizz-Buzz");
+//         } else {
+//             return("Booo!")
+//         }
+//     }
+// }
+// console.log(fizzBuzz(15));
+// Real Solution
+// function fizzBuzz(){
+//     for (let i = 1; i <= 100; i++){
+//         if (i % 3 === 0 && i % 5 === 0){
+//             console.log("fizz buzz");
+//         } else if (i % 3 === 0){
+//             console.log("fizz")
+//         } else if (i % 5 === 0){
+//             console.log("Fizz-Buzz")
+//         } else {
+//                 console.log(i);
+//             }
+//         }
+//     }
+// fizzBuzz();git
