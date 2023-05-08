@@ -1,0 +1,10 @@
+h1{
+    display: inline-block;
+}
+nav{
+    display: inline-block;
+    float: right;
+}
+ul{
+    list-style-type: none;
+}

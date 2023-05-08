@@ -96,3 +96,13 @@
 //         }
 //     }
 // fizzBuzz();git
+
+// Warmup Exercise - 6...
+// MY ATTEMPT
+// let i = 1;
+// do {
+//     i = i + i;
+// }
+// while(i < 1000000);
+//
+// console.log(i);
