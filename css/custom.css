@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+    font-family: "Open-Sans", sans-serif;
+}
+.header{
+    display: flex;
+
+}
+.banner-image img{
+    height: 400px;
+    width: 100%;
+    background-color: black;
+}
