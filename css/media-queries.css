@@ -73,38 +73,29 @@
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media screen and (min-width:900px) and (max-width:4000px){
-.alert-info a{
-    color: white;
+.alert-info{
+    opacity: 0;
 }
+    body{
+        display: inline-block;
+    }
 h1{
+    float: left;
     margin-top: 10px;
     margin-left: 20px;
-    display: inline-block;
-    horiz-align: left;
-    border: 1px solid red;
-}
-nav{
-    display: inline-block;
-    horiz-align: right;
-    margin-right: 20px;
-    border: 1px solid fuchsia;
 }
 .nav-links{
-    display: flex;
-    flex-direction: row;
-    border: 1px solid black;
+    float: right;
 }
-.nav-links li{
-    border: 1px solid green;
-    margin-bottom: 10px;
+li{
+    display: inline-block;
 }
 ul{
     list-style-type: none;
 }
     .header-img{
         margin: 10px 20px 50px 20px;
-        display: flex;
-        justify-content: center;
+
     }
     .header-img img{
         width: 100%;
