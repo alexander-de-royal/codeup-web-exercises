@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+h1{
+    font-size: 3em;
+    padding: 0.2em 0 0.2em 0;
+}
+.header{
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-between;
+}
+.header ul{
+    list-style-type: none;
+}
+ul{
+    padding-left: 0;
+}
+.left-nav-title ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid blue;
+}
+.left-nav-title ul li{
+    margin-right: 20px;
+    font-weight: bold;
+}
+.right-nav-title ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid green;
+}
+.right-nav-title ul li{
+    margin-left: 20px;
+    font-weight: bold;
+}
