@@ -1,4 +1,4 @@
-//Section 19 - Repeating stuff with loops
+// Section 19 - Repeating stuff with loops
 
 //looping over arrays
 // const animals = ['lions', 'tigers', 'bears'];
@@ -114,3 +114,46 @@
 // console.log(total / scores.length);
 
 // To do list project code along
+
+// Section 20 - NEW: Introducing Functions
+
+// Our very first function
+// function singSong(){
+//     console.log('DO');
+//     console.log('RE');
+//     console.log('MI');
+// }
+// singSong()
+// function rant(message){
+//     console.log(message.toUpperCase());
+//     console.log(message.toUpperCase());
+//     console.log(message.toUpperCase());
+// }
+// rant("I hate beets");
+
+// Functions with multiple arguments
+// function greet(firstName, lastName){
+//     console.log(`Hey there, ${firstName} ${lastName[0]}.`)
+// }
+// function isSnakeEyes(input1, input2){
+//     if(input1 === 1 && input2 === 1){
+//         console.log("Snake Eyes!");
+//     } else {
+//         console.log("Not Sake Eyes!")
+//     }
+// }
+// isSnakeEyes(1,5);
+// function lastElement(arr){
+//     return arr.length - 1;
+// }
+// lastElement([1,2,3,4,5,6,7]);
+// function capitalize(word) {
+//     return word[0].toUpperCase()  + word.slice(1);
+// }
+// function sumArray(nums){
+//     let total = 0;
+//     for(let i = 0; i < nums.length; i++){
+//         total += nums[i];
+//     }
+//     return total;
+// }
