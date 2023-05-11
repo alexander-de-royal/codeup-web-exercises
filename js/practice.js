@@ -157,3 +157,93 @@
 //     }
 //     return total;
 // }
+
+// Section 21 - Leveling up our functions
+
+// Function Scope
+// function collectEggs(){
+//     let totalEggs = 6;
+// }
+// collectEggs();
+// console.log(totalEggs);
+// let bird = 'Scarlet Macaw';
+// function birdWatch(){
+//     let bird = 'Great Blue Heron';
+//     console.log(bird);
+// }
+// console.log(bird);
+
+// Block Scope
+// let radius = 8;
+// if (radius > 0){
+//     const PI = 3.14159;
+//     let msg = 'Hi!'
+// }
+// console.log(radius);
+// console.log(PI);
+
+// Lexical Scope
+// function bankRobbery() {
+//     const heroes = ['Spiderman', 'Wolverine', 'Black Panther']
+//     function cryForHelp(){
+//         for(let hero of heroes){
+//             console.log(`Please help us ${hero.toUpperCase()}`);
+//         }
+//         inner();
+//     }
+//     cryForHelp();
+// }
+
+// Function Expressions
+// function add(x,y){
+//     return x + y;
+// }
+// const add = function (x,y){
+//     return x + y;
+// }
+
+// Higher Order Functions
+// function callTwice(func){
+//     func();
+//     func();
+// }
+// callTwice(1);
+
+// Returning a functions
+// function makeMysteryFunc(){
+//     const rand = Math.random();
+//     if(rand > 0.5){
+//         return function(){
+//             console.log("Congrats, you I am a good function");
+//             console.log("You win a million dollars");
+//         }
+//     } else {
+//         return function (){
+//             console.log("This is the other type of function");
+//         }
+//     }
+// }
+// function makeBetweenFunc(min, max){
+//     return function(num){
+//         return num >= min && num <= max;
+//     }
+// }
+// function isBetween(num){
+//     return num > 1 && num < 10;
+// }
+
+// Defining Methods
+// We can add functions as properties on objects. We call them methods.
+const math = {
+    multiply : function (x, y){
+        return x * y;
+    },
+    divide : function (x, y){
+        return x / y;
+    },
+    square : function (x){
+        return x * x;
+    }
+}
+
+

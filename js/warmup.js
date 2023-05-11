@@ -131,3 +131,14 @@
 // console.log(addEmUp([1,2,3,4,5,6,7,8,9,10])); // returns 55
 // console.log(addEmUp([-13, -92, -3500])) // returns -3605
 
+// Warmup Exercise - 8 | May 11th 2023
+// Write a function that takes in a string and returns an object describing the string. The object should have a string property that contains the original string, a numberOfEs property that contains a count of the number of e's in the string (case-insensitive), and an isEvenLength property that contains a boolean for whether the string's length is even or not.
+// function explainString(str){
+//     return{
+//         string: str,
+//         numberOfEs: countEs(str),
+//         isEvenLength: str.length % 2 === 0
+//     }
+// }
+// console.log(explainString("cheese")); // returns {string: "cheese", numberOfEs: 3, isEvenLength: true}
+// console.log(explainString("dog")); // returns {string: "dog", numberOfEs: 0, isEvenLength: false}
