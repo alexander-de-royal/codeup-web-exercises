@@ -1,0 +1,27 @@
+body{
+    background-color: #e6e6e6;
+}
+.test-one {
+    width: 100px;
+    height: 100px;
+    background-color: #e6563b;
+    border: 5px solid lightgray;
+}
+.test-two {
+    width: 100px;
+    height: 100px;
+    background-color: #e6563b;
+    border: 5px solid lightgray;
+}
+.test-three {
+    width: 100px;
+    height: 100px;
+    background-color: #e6563b;
+    border: 5px solid lightgray;
+}
+.test-four {
+    width: 100px;
+    height: 100px;
+    background-color: #e6563b;
+    border: 5px solid lightgray;
+}
