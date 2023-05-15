@@ -265,4 +265,138 @@
 //     }
 // }
 
+// Section 22 - Callbacks & Array Methods
+
+// The forEach Method
+// Accepts a callback function. Calls the function once per element in the array.
+// const nums = [9,8,7,6,5,4,3,2,1];
+// nums.forEach(function(n){
+//     console.log(n*n)
+// });
+// nums.forEach(function (el){
+//     if(el % 2 === 0){
+//         console.log(el)
+//     }
+// })
+// const numbers = [1,2,3,4,5,6,7,8,9];
+// function print(element){
+//     console.log(element)
+// }
+// print(numbers[0]);
+// print(numbers[1]);
+// print(numbers[2]);
+// numbers.forEach(print)
+// numbers.forEach(function(el){
+//     console.log(el)
+// });
+// const movies = [
+//     {
+//         title: 'Amadeus',
+//         score: 99
+//     },
+//     {
+//         title: 'Stand by me',
+//         score: 85
+//     },
+//     {
+//         title: 'Parasite',
+//         score: 95
+//     },
+//     {
+//         title: 'Alien',
+//         score: 90
+//     }
+// ]
+// movies.forEach(function(movie){
+//     console.log(`${movie.title} - ${movie.score}/100`)
+// });
+
+// The map method
+// Creates a new array with the results of calling a callback on every element in the array
+// const texts = ['rofl', 'lol', 'omg', 'ttyl'];
+// const caps = texts.map(function(t){
+//     return t.toUpperCase();
+// });
+// texts;
+// caps;
+// const numbers = [1,2,3,4,5,6,7,8,9];
+// const doubles = numbers.map(function(num){
+//     numbers.map(function(num){
+//         return num * 2;
+//     });
+// });
+// const movies = [
+//     {
+//         title: 'Amadeus',
+//         score: 99
+//     },
+//     {
+//         title: 'Stand by me',
+//         score: 85
+//     },
+//     {
+//         title: 'Parasite',
+//         score: 95
+//     },
+//     {
+//         title: 'Alien',
+//         score: 90
+//     }
+// ]
+// const titles = movies.map(function(movie){
+//     return movie.title;
+// })
+
+// Intro to Arrow Functions
+// function square(x){
+//     return x * x;
+// }
+// const sum = (x, y) => {
+//     return x * y;
+// }
+
+// Arrow function implicit returns
+// const isEven = function(num){
+//     return num % 2 === 0;
+// }
+// const isEven = num => {
+//     return num % 2 === 0;
+// }
+// const isEven = (num) => {
+//     return n % 2 === 0;
+// }
+// const isEven = num => num % 2 === 0;
+
+// The filter method
+// Creates a new array with all elements that pass the test implemented by the provided function
+// const nums = [1,2,3,4,5,6,7,8,9];
+// const odds = nums.filter(n => {
+//     return n % 2 === 1;
+// })
+// const smallNums = nums.filter(n => n < 5);
+
+// Some & Every Method
+// Similar to every, but returns true if ANY of the array elements pass the test function
+// const words = ['dog', 'jello', 'log', 'cupcake', 'bag', 'wag'];
+// // Are there any words longer than four characters?
+// words.some(word => {
+//     return word.length > 4;
+// })
+// // Do any words start with 'Z'?
+// words.some(word => {
+//     return word[0] === 'Z';
+// })
+// // Do any words contain 'cake'?
+// words.some(w =>{
+//     return w.includes('cake')
+// });
+
+// Reduce
+// Executes a reducer function on each element of the array, resulting in a single value.
+
+// Section 24 - Introduction The World Of The DOM
+// The DOM is a javascript representation of a webpage. It's your js "window" into the contents of a webpage. It's just a bunch of objects that you can interact with vai JS.
+
+
+// alert("hey")
 
