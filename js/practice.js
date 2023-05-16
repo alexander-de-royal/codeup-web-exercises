@@ -395,8 +395,19 @@
 // Executes a reducer function on each element of the array, resulting in a single value.
 
 // Section 24 - Introduction The World Of The DOM
+
+// getElementByID
 // The DOM is a javascript representation of a webpage. It's your js "window" into the contents of a webpage. It's just a bunch of objects that you can interact with vai JS.
-
-
+// Select
+// Manipulate
+// const allImages = document.getElementById('img');
+// for(let img of allImages){
+//     console.log(img.src)
+// }
+// for(let img of allImages){
+//     img.src = "https://www.google.com"
+// }
 // alert("hey")
+
+// innerHTML, textContent, & innerText
 
