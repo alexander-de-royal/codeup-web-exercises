@@ -9,10 +9,10 @@
 <body>
 <h1 id="main-header">Hello World!</h1>
 
-<button class="drum">Make me Red</button>
-<button class="drum">Make me Blue</button>
-<button class="drum">Make me Yellow</button>
-<button class="drum">Make me Disappear</button>
+<button class="red">Make me Red</button>
+<button class="blue">Make me Blue</button>
+<button class="yellow">Make me Yellow</button>
+<button class="disappear">Make me Disappear</button>
 
 
 <ul>
@@ -38,8 +38,17 @@
     (function() {
         "use strict";
 
-        document.querySelector("button").addEventListener("click", function handleClick(){
-            alert("I got clicked!")
+        document.querySelector(".red").addEventListener("click", function handleClick(){
+            mainHeader.style.color = "red";
+        });
+        document.querySelector(".blue").addEventListener("click", function handleClick(){
+            mainHeader.style.color = "blue";
+        });
+        document.querySelector(".yellow").addEventListener("click", function handleClick(){
+            mainHeader.style.color = "yellow";
+        });
+        document.querySelector(".disappear").addEventListener("click", function handleClick(){
+            mainHeader.style.color = "white";
         });
 
         // TODO: Uncomment next line and get the main header element by id
