@@ -108,6 +108,7 @@
 // console.log(i);
 
 // Warmup Exercise - 7 | May 10th 2023
+// Write a function that takes in an array of numbers and returns all of the numbers added together (We'll be assuming that only arrays are going to be used with this function).
 // function addEmUp(array) {
 //
 //     let sum = 0;
@@ -144,6 +145,7 @@
 // console.log(explainString("dog")); // returns {string: "dog", numberOfEs: 0, isEvenLength: false}
 
 // Warmup Exercise - 9 | May 12th 2023
+// Write a function that takes in an array of objects and returns an array containing all of the names from the original array.
 // const hamsters = [
 //     {
 //         name: "Hamtaro",
@@ -187,6 +189,7 @@
 // console.log(extractNames(hamsters)); // returns ["Hamtaro", "Bijou", "Oxnard", "Boss", "Snoozer"];
 
 // Warmup Exercise - 10 | May 15th 2023
+// Write a function that takes in an array of objects and returns the object with the largest heightInMM property
 // const hamsters = [
 //     {
 //         name: "Hamtaro",
@@ -233,6 +236,7 @@
 // // returns {name: "Boss", heightInMM: 120, fur: ['brown', 'white'], gender: "male", dateOfBirth: "September 21"}
 
 // Warmup Exercise - 11 | May 16th 2023
+// Write a function that takes in an array of objects and returns an array of the objects from the array that only have one fur color.
 // const hamsters = [
 //     {
 //         name: "Hamtaro",
@@ -278,6 +282,7 @@
 // console.log(singleFurColor(hamsters));
 
 // Warmup Exercise - 12 | May 17th 2023
+// Write a function that takes in an array of objects and returns the object with the most colors in the fur array.
 // const hamsters = [
 //     {
 //         name: "Hamtaro",
@@ -321,6 +326,8 @@
 //     return mostColors;
 // }
 // console.log(mostColorful(hamsters));
+
+
 
 
 
