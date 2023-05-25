@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Essential Methods</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=IBM+Plex+Mono&family=K2D:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            line-height: 1.2em;
+            font-family: 'K2D', sans-serif;
+        }
+
+        h1, h3, button {
+            font-family: 'Croissant One', cursive;
+        }
+
+        .invisible {
+            visibility: hidden;
+        }
+
+        .highlighter {
+            background-color: black;
+            color: white;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .emboldened {
+            font-weight: bold;
+        }
+
+        .enbluened {
+            color: #373fff;
+        }
+
+        body {
+            font-size: 1.25em;
+            color: #B3001B;
+            background-color: #96E6B3;
+        }
+
+        dt {
+            font-weight: bold;
+        }
+
+        dd {
+            margin-bottom: 1.2em;
+        }
+
+        .yellow-bg {
+            background: yellow;
+        }
+
+        .styler {
+            position: relative;
+            top: 0;
+            left: 0;
+            transition: 1s;
+            font-size: 1em;
+            border-radius: 5px;
+            color: #DDDBF1;
+            background-color: #3C4F76;
+            border: #08A4BD solid 5px;
+            padding: 10px;
+            box-shadow: 5px 5px 10px black;
+        }
+
+        .styler:hover {
+            background-color: #EEA243;
+            color: #F1D9A7;
+            border-color: #F3D34A;
+            box-shadow: 0 0 5px black;
+            top: 5px;
+            left: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Multi-purpose Stadiums in the United States</h1>
+<dl>
+    <dt>Bud and Jackie Sellick Bowl</dt>
+    <dd class="invisible">Located in Indianapolis, IN</dd>
+
+    <dt>Don Shula Stadium</dt>
+    <dd class="invisible">Located in University Park, OH</dd>
+
+    <dt>Ernest W. Spangler Stadium</dt>
+    <dd class="invisible">Located in Boiling Springs, NC</dd>
+
+    <dt>J. Lawrence Walkup Skydome</dt>
+    <dd class="invisible">Located in Flagstaff, AZ</dd>
+
+    <dt>Lake Myrtle Sports Complex</dt>
+    <dd class="invisible">Located in Auburndale, FL</dd>
+
+    <dt>Oakland–Alameda County Coliseum,</dt>
+    <dd class="invisible">Located in Oakland, CA</dd>
+
+    <dt>Pine Bowl</dt>
+    <dd class="invisible">Located in Loretto, PA</dd>
+
+    <dt>Rice–Totten Stadium</dt>
+    <dd class="invisible">Located in Itta Bena, MS</dd>
+
+    <dt>Saluki Stadium</dt>
+    <dd class="invisible">Located in Carbondale, IL</dd>
+
+    <dt>Welcome Stadium</dt>
+    <dd class="invisible">Located in Dayton, OH</dd>
+</dl>
+
+<button class="styler" id="btn-1">Click to change some things!</button>
+<h1>National Parks of Iceland</h1>
+<h3>Snæfellsjökull</h3>
+<ul>
+    <li>Stratovolcano</li>
+    <li>Sometimes it may be seen from the city of Reykjavík over Faxa Bay, at a distance of 120 km.</li>
+    <li>The mountain is one of the most famous sites of Iceland, primarily due to the novel Journey to the Center of the Earth (1864) by Jules Verne, in which the protagonists find the entrance to a passage leading to the center of the earth on Snæfellsjökull.</li>
+    <li>In August 2012 the summit was ice-free for the first time in recorded history.</li>
+</ul>
+
+<h3>Vatnajökull</h3>
+<ul>
+    <li>Vatnajökull National Park is divided into four territories.</li>
+    <li>Vatnajökull is Europe's largest glacier outside the arctic, with a surface area of 8,100 km2.</li>
+    <li>It encompasses all of Vatnajökull glacier and extensive surrounding areas. These include the national parks previously existing at Skaftafell in the southwest and Jökulsárgljúfur in the north.</li>
+    <li>On 5 July 2019, Vatnajökull National Park was inscribed as a World Heritage Site.</li>
+</ul>
+
+<h3>Þingvellir</h3>
+<ul>
+    <li>The National Gallery of Iceland owns more than 150 paintings by Ásgrímur Jónsson that have Þingvellir as their subject.</li>
+    <li>The name Þingvellir is derived from the Old Norse Þingvǫllr, from þing (“thing, assembly”) and vǫllr (“field”), meaning assembly fields.</li>
+    <li>Þingvellir is associated with the Althing, the national parliament of Iceland, which was established at the site in 930 AD.</li>
+    <li>Þingvellir was designated as a World Heritage Site in 2004.</li>
+</ul>
+
+<button class="styler" id="btn-2">Click me to highlight last list item</button>
+
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script>
+    "use strict";
+
+    $(document).ready(function() {
+        $("#btn-1").on("click", function() {
+            $("dd").toggleClass("invisible");
+        });
+
+        $("dt").on("click", function() {
+            $(this).addClass("highlighter");
+        });
+
+        $("#btn-2").on("click", function() {
+            $("ul").each(function() {
+                // $(this).find("li").last().addClass("yellow-bg");
+                $(this).children().last().addClass("yellow-bg");
+            });
+        });
+
+        $("h3").on("click", function () {
+            $(this).next().children().css("font-weight", "bold");
+        });
+
+        $("li").on("click", function() {
+            $(this).parent().children().first().addClass("enbluened");
+        });
+    });
+</script>
+
+</body>
+</html>
