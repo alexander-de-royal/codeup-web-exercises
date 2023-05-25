@@ -412,5 +412,3 @@
 // innerHTML, textContent, & innerText
 
 
-alert("Hey");
-
