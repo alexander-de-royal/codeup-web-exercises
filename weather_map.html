@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: cornflowerblue;
+            font-family: "American Typewriter", sans-serif;
+        }
+        .card{
+            background: black;
+            color: white;
+            padding: 2em;
+            border-radius: 30px;
+            width: 100%;
+            max-width: 420px;
+            margin: 1em;
+        }
+        .search{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            margin: .5em;
+            border-top-right-radius: 18px;
+            border-bottom-right-radius: 18px;
+            padding: 0.8em;
+            outline: none;
+            left: -80px;
+            width: calc(100% - 60%);
+        }
+        input.search-bar{
+            border: none;
+            outline: none;
+            padding: 0.8em;
+            border-top-left-radius: 18px;
+            border-bottom-left-radius: 18px;
+            background: white;
+            width: calc(100% - 50px);
+        }
+        .icon{
+
+        }
+
+    </style>
+    <title>Weather Map</title>
+</head>
+<body>
+
+<div class="card">
+    <div class="search">
+        <label for="user-input"></label>
+        <input id="user-input" type="text" class="search-bar">
+        <button>Display Weather</button>
+    </div>
+    <div class="weather">
+        <h2 class="city">Weather in Denver</h2>
+        <div class="temp">51 C</div>
+        <img src="" alt="" class="icon">
+        <div class="description">Cloudy</div>
+        <div class="humidity">Humidity: 60%</div>
+        <div class="wind">Wind Speed: 6.2 km/h</div>
+    </div>
+</div>
+
+
+<script>
+
+    const apiKey = "40cb7f55adbe6b3302d4780d0ead3739";
+    const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+    const searchBox = document.querySelector(".search input")
+    const searchBtn = document.querySelector(".search button")
+    async function checkWeather(city){
+        const response = await fetch(apiUrl + city +`&appid=${apiKey}`);
+        let data = await response.json();
+        console.log(data);
+
+        document.querySelector(".city").innerHTML = data.name;
+        document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + " C";
+        document.querySelector(".humidity").innerHTML = data.main.humidity + " %";
+        document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+    }
+    searchBtn.addEventListener("click", function(){
+        checkWeather(searchBox.value);
+    })
+
+
+    // let weather = {
+    //     "apiKey": "40cb7f55adbe6b3302d4780d0ead3739",
+    //     fetchWeather: function(city){
+    //         fetch(
+    //             "https://api.openweathermap.org/data/2.5/weather?q="
+    //             + city
+    //             + "&units=metric&appid="
+    //             + this.apiKey
+    //     )
+    //         .then((response) => response.json())
+    //         .then((data) => console.log(data));
+    //     },
+    //     displayWeather: function(data){
+    //         const {name} = data;
+    //         const {icon, description} = data.weather;
+    //         const {temp, humidity} = data.main;
+    //         const {speed} = data.wind;
+    //         console.log(name, icon, description, temp, humidity, speed);
+    //         document.querySelector(".city").innerText = "Weather in " + name;
+    //         document.querySelector(".icon").src= "https://openweathermap.org/img/wn/" + icon + ".png";
+    //         document.querySelector(".description").innerText = description;
+    //         document.querySelector(".temp").innerText = temp + "C";
+    //         document.querySelector(".humidity").innerText = "Humidity" + humidity + "%";
+    //         document.querySelector(".speed").innerText = "Wind speed" + speed + "km/h";
+    //     },
+    //     search: function(){
+    //         this.fetchWeather(document.querySelector(".search-bar"))
+    //     }
+    // };
+    //
+    // document.querySelector(".search button").addEventListener("click", function (){
+    //     weather.search();
+    // })
+</script>
+</body>
+</html>
