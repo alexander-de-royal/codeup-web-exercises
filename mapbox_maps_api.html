@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+    <!-- Mapbox CSS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet'/>
+    <style>
+    #map {
+        /* the width and height may be set to any size */
+        width: 100%;
+        height: 800px;
+    }
+    *{
+        box-sizing: border-box;
+        margin-right: 0;
+        padding: 0;
+    }
+    h1{
+        /*z-index: 1000;*/
+    }
+    #heading{
+        /*position: absolute;*/
+        /*z-index: 1000;*/
+    }
+    #map{
+        /*z-index: -1000;*/
+    }
+    </style>
+</head>
+<body>
+<h1 id="heading">My Fav Grassland Mapbox Map!</h1>
+
+<form>
+    <label for="slider">Zoom (between 0 and 24):</label>
+    <input type="range" id="slider" name="vol" min="0" max="50">
+</form>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'>
+
+</div>
+
+<script src="js/key.js"></script>
+<!--<script src="js/mapbox-geocode-utils.js"></script>-->
+<!-- Custom JS -->
+<script>
+        mapboxgl.accessToken = myMapBoxKey;
+        let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 8,
+        center: [-103.80, 40.80]
+    });
+        let marker = new mapboxgl.Marker()
+            .setLngLat([-103.80, 40.80])
+            .addTo(map);
+
+        let popup = new mapboxgl.Popup()
+            .setLngLat([-103.80, 40.80])
+            .setHTML("<p>My Fav Grassland!</p>")
+            .addTo(map)
+
+let sliderAction = function(value){
+    $sliderChosen.html(value);
+    $('#map').width(value);
+}
+btnZoomIn.click(function(){
+    $("#slide").value();
+});
+src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+        crossOrigin="anonymous"
+</script>
+</body>
+</html>
+
+

@@ -4,92 +4,233 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+<!--BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        body{
+            font-family: "futura", sans-serif;
+            color: white;
+            background-color: black;
+        }
+        .cityName{
+            letter-spacing: 3px;
+            font-size: 2rem;
+        }
+        .cityInput{
+            border: none;
+            background: transparent;
+            border-bottom: 1px solid white;
+            color: white;
+        }
+        .button-image{
+            width: 20px;
+        }
+        .col-top-left{
+            border-radius: 20px;
+            background-image: linear-gradient(to right, #434343 0%, black 100%);
+            border: 1px solid white;
+        }
+        .col-bottom-left{
+            background-image: linear-gradient(to right, #434343 0%, black 100%);
+            border-radius: 20px;
+            border: 1px solid white;
+        }
+        .col-top-right{
+            background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+            border-radius: 20px;
+            border: 1px solid white;
+        }
+        .col-bottom-right{
+            background-image: linear-gradient(to right, #434343 0%, black 100%);
+            border-radius: 20px;
+            border: 1px solid white;
+        }
+        .user{
+            background-image: linear-gradient(to right, #434343 0%, black 100%);
+            border-radius: 20px;
+            border: 1px solid white;
+        }
+        .icons{
+            /*background-image: linear-gradient(135deg, #30cfd0 0%, #330867 100%);*/
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .row{
+            background: black;
+            /*background-color: black;*/
+            background-size: cover;
+            border-radius: 20px;
+            /*height: 500px;*/
+            margin: 20px;
+        }
+        button{
+            background-color: transparent;
+            border: none;
+        }
+        .iconsContainer{
+            display: flex;
+            flex-direction: column;
+            justify-items: flex-start;
+            /*justify-content: right;*/
+            /*align-items: center;*/
+        }
+        .highlight{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .location-image{
+            width: 40px;
+            height: 40px;
+        }
+        .location{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+        }
 
-    <title>Document</title>
+
+    </style>
+    <title>Weather Map</title>
 </head>
 <body onload="DefaultScreen()">
-<center>
-    <h1 id="Para1">5 Days Weather Forecast</h1>
-    <p id="inputContainer">City: <input type="text" id="cityInput"></p>
-    <button type="button" onclick="GetInfo()">Click Me</button>
-    <h2 id="cityName">---London---</h2>
-</center>
+<!--<div class="container">-->
 
-<div id = "weatherContainer">
-    <div id="iconsContainer">
-        <div class = "icons">
-            <p class="weather" id="day1"></p>
-            <div class="image"><img src="dots.png" class="imgClass" id="img1"></div>
-            <p class="minValues" id="day1Min">Loading...</p>
-            <p class="maxValues" id="day1Max">Loading...</p>
+    <div class="row">
+        <div class="col col-1 user mt-3 mx-1"></div>
+        <div class="col-3 col-top-left mt-3 mx-1">
+            <label for="inputbox"></label>
+            <input id="inputbox" type="text" class="cityInput mt-5" placeholder="enter a city name">
+            <button type="button" onclick="GetInfo()"><img class="button-image" src="weather-img/button.png" alt=""></button>
+            <div class="location mt-4">
+                <img class="location-image" src="weather-img/location.png" alt=""><h2 class="cityName mt-3"></h2>
+                <div class = "icons1">
+            </div>
+            </div>
+                <p class="weather mt-5" id="day1"></p>
+                <div class="image"><img src="dots.png" class="imgClass" id="img1"></div>
+                <h1 class="temp mt-3">Loading...</h1>
+
         </div>
-        <div class = "icons">
-            <p class="weather" id="day2"></p>
-            <div class="image"><img src="dots.png" class="imgClass" id="img2"></div>
-            <p class="minValues" id="day2Min">Loading...</p>
-            <p class="maxValues" id="day2Max">Loading...</p>
+        <div class="col-7 col-top-right mt-3 mx-1">
+            <h3 class="description mt-3">Loading...</h3>
+            <h4>TODAY'S HIGHLIGHTS</h4>
+            <div class="highlight">
+                <h4 class="humidity mt-3">Loading...</h4>
+                <h6 class="wind mt-3">Loading..</h6>
+                <p class="minValues mt-3" id="day1Min">Loading...</p>
+                <p class="maxValues mt-3" id="day1Max">Loading...</p>
+            </div>
+
+<!--                <div id = "weatherContainer">-->
+<!--                    <div class="iconsContainer">-->
+<!--                        <div class = "icons  mt-5">-->
+<!--                            <p class="weather" id="day2"></p>-->
+<!--                            <div class="image"><img src="dots.png" class="imgClass" id="img2"></div>-->
+<!--                            <p class="minValues" id="day2Min">Loading...</p>-->
+<!--                            <p class="maxValues" id="day2Max">Loading...</p>-->
+<!--                        </div>-->
+<!--                        <div class = "icons mt-5">-->
+<!--                            <p class="weather" id="day3"></p>-->
+<!--                            <div class="image"><img src="dots.png" class="imgClass" id="img3"></div>-->
+<!--                            <p class="minValues" id="day3Min">Loading...</p>-->
+<!--                            <p class="maxValues" id="day3Max">Loading...</p>-->
+<!--                        </div>-->
+<!--                        <div class = "icons mt-5">-->
+<!--                            <p class="weather" id="day4"></p>-->
+<!--                            <div class="image"><img src="dots.png" class="imgClass" id="img4"></div>-->
+<!--                            <p class="minValues" id="day4Min">Loading...</p>-->
+<!--                            <p class="maxValues" id="day4Max">Loading...</p>-->
+<!--                        </div>-->
+<!--                        <div class = "icons mt-5">-->
+<!--                            <p class="weather" id="day5"></p>-->
+<!--                            <div class="image"><img src="dots.png" class="imgClass" id="img5"></div>-->
+<!--                            <p class="minValues" id="day5Min">Loading...</p>-->
+<!--                            <p class="maxValues" id="day5Max">Loading...</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </div>
+        <div class="col col-1 user mt-3 mx-1"></div>
+        <div class="col-3 col-bottom-left mt-3 mx-1">5 DAYS FORECAST
+            <div id = "weatherContainer">
+                <div class="iconsContainer">
+                    <div class = "icons  mt-4">
+                        <p class="minValues" id="day2Min">Loading...</p>
+                        <p class="maxValues" id="day2Max">Loading...</p>
+                        <div class="image"><img src="dots.png" class="imgClass" id="img2"></div>
+                        <p class="weather" id="day2"></p>
+                    </div>
+                    <div class = "icons mt-4">
+                        <p class="minValues" id="day3Min">Loading...</p>
+                        <p class="maxValues" id="day3Max">Loading...</p>
+                        <div class="image"><img src="dots.png" class="imgClass" id="img3"></div>
+                        <p class="weather" id="day3"></p>
+                    </div>
+                    <div class = "icons mt-4">
+                        <p class="minValues" id="day4Min">Loading...</p>
+                        <p class="maxValues" id="day4Max">Loading...</p>
+                        <div class="image"><img src="dots.png" class="imgClass" id="img4"></div>
+                        <p class="weather" id="day4"></p>
+                    </div>
+                    <div class = "icons mt-4">
+                        <p class="minValues" id="day5Min">Loading...</p>
+                        <p class="maxValues" id="day5Max">Loading...</p>
+                        <div class="image"><img src="dots.png" class="imgClass" id="img5"></div>
+                        <p class="weather" id="day5"></p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class = "icons">
-            <p class="weather" id="day3"></p>
-            <div class="image"><img src="dots.png" class="imgClass" id="img3"></div>
-            <p class="minValues" id="day3Min">Loading...</p>
-            <p class="maxValues" id="day3Max">Loading...</p>
-        </div>
-        <div class = "icons">
-            <p class="weather" id="day4"></p>
-            <div class="image"><img src="dots.png" class="imgClass" id="img4"></div>
-            <p class="minValues" id="day4Min">Loading...</p>
-            <p class="maxValues" id="day4Max">Loading...</p>
-        </div>
-        <div class = "icons">
-            <p class="weather" id="day5"></p>
-            <div class="image"><img src="dots.png" class="imgClass" id="img5"></div>
-            <p class="minValues" id="day5Min">Loading...</p>
-            <p class="maxValues" id="day5Max">Loading...</p>
-        </div>
+        <div class="col-7 col-bottom-right mt-3 mx-1">Column 2</div>
     </div>
-</div>
-
 
 <script>
+    const weatherIcon = document.querySelector("#row");
     function GetInfo() {
-
-        var newName = document.getElementById("cityInput");
-        var cityName = document.getElementById("cityName");
-        cityName.innerHTML = "--"+newName.value+"--";
-
+        let newName = document.querySelector(".cityInput");
+        let cityName = document.querySelector(".cityName");
+        cityName.innerHTML = newName.value.toUpperCase();
         fetch('https://api.openweathermap.org/data/2.5/forecast?q='+newName.value+'&appid=40cb7f55adbe6b3302d4780d0ead3739')
             .then(response => response.json())
             .then(data => {
-
-                //Getting the min and max values for each day
-                for(i = 0; i<5; i++){
-                    document.getElementById("day" + (i+1) + "Min").innerHTML = "Min: " + Number(data.list[i].main.temp_min - 273.15).toFixed(1)+ "°";
-                    //Number(1.3450001).toFixed(2); // 1.35
-                    document.getElementById("day" + (i+1) + "Max").innerHTML = "Max: " + Number(data.list[i].main.temp_max - 273.15).toFixed(2) + "°";
-
+                for( let i = 0; i<5; i++){
                     document.getElementById("img" + (i+1)).src = "http://openweathermap.org/img/wn/"+ data.list[i].weather[0].icon +".png";
+                    document.querySelector(".description").innerHTML = data.list[i].weather[0].main.toUpperCase();
+                    document.querySelector(".temp").innerHTML = Number(data.list[i].main.temp - 273.15).toFixed(2) + "°C" + " ±3";
+                    document.querySelector(".humidity").innerHTML = Number(data.list[i].main.humidity) + "%";
+                    document.querySelector(".wind").innerHTML = Number(data.list[i].wind.speed) + " km/h";
+                    document.getElementById("day" + (i+1) + "Min").innerHTML = Number(data.list[i].main.temp_min - 273.15).toFixed(1)+ "/ ";
+                    document.getElementById("day" + (i+1) + "Max").innerHTML = Number(data.list[i].main.temp_max - 273.15).toFixed(2) + "°C";
+
+                    if(data.list[i].weather[0].main === "clouds"){
+                        document.querySelector("#row").style.backgroundImage = "url(weather-img/background.jpeg)";
+                    } else if (data.list[i].weather[0].main === "clear"){
+                        document.querySelector("#row").style.backgroundImage = "url(weather-img/clear.jpeg)";
+                    } else if (data.list[i].weather[0].main === "rain"){
+                        document.querySelector("#row").style.backgroundImage = "url(weather-img/rain.jpeg)";
+                    } else if (data.list[i].weather[0].main === "drizzle"){
+                        document.querySelector("#row").style.backgroundImage = "url(weather-img/drizzle.jpeg)";
+                    } else if (data.list[i].weather[0].main === "mist"){
+                        document.querySelector("#row").style.backgroundImage = "url(weather-img/mist.jpeg)";
+                    }
                 }
-
                 console.log(data)
-
-
             })
-
             .catch(err => alert("Something Went Wrong: Try Checking Your Internet Coneciton"))
     }
-
     function DefaultScreen(){
-        document.getElementById("cityInput").defaultValue = "London";
+        document.querySelector(".cityInput").defaultValue = "London";
         GetInfo();
     }
 
-
     //Getting and displaying the text for the upcoming five days of the week
-    var d = new Date();
-    var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",];
-
+    let d = new Date();
+    let weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",];
     //Function to get the correct integer for the index of the days array
     function CheckDay(day){
         if(day + d.getDay() > 6){
@@ -99,10 +240,13 @@
             return day + d.getDay();
         }
     }
-
-    for(i = 0; i<5; i++){
+    for(let i = 0; i<5; i++){
         document.getElementById("day" + (i+1)).innerHTML = weekday[CheckDay(i)];
     }
+    // BOOTSTRAP
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossOrigin="anonymous"
 </script>
 </body>
 </html>
