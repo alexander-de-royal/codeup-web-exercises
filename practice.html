@@ -21,7 +21,8 @@
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
 
-
+<script src="js/key.js"></script>
+<script src="js/mapbox-geocode-utils.js"></script>
 <!-- Custom JS -->
 <script>
     // mapboxgl.accessToken = sk.eyJ1IjoiYXNkZXJveWFsIiwiYSI6ImNsaWFkY3o0bzAyNWczY24xNGYxenBvMTMifQ.IqQ-svlP9r4W1o8sH2OKgA;
@@ -35,6 +36,8 @@
     var marker = new mapboxgl.Marker()
         .setLngLat([-98.4916, 29.4260])
         .addTo(map);
+
+    geocode("600 Navarro St #350")
 </script>
 </body>
 </html>
