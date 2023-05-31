@@ -31,12 +31,18 @@
     </style>
 </head>
 <body>
-<h1 id="heading">My Fav Grassland Mapbox Map!</h1>
+<h1 id="heading">My Fav Restuarant Mapbox Map!</h1>
+
 
 <form>
-    <label for="slider">Zoom (between 0 and 24):</label>
-    <input type="range" id="slider" name="vol" min="0" max="50">
+    <label for="slider">Zoom Level:</label>
+    <button class="btn1">5</button>
+    <button class="btn2">10</button>
+    <button class="btn3">15</button>
+    <button class="btn4">20</button>
 </form>
+<label for="address">Enter an address</label>
+<input type="text">
 
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'>
@@ -44,6 +50,7 @@
 </div>
 
 <script src="js/key.js"></script>
+<script src="js/mapbox-geocode-utils.js"></script>
 <!--<script src="js/mapbox-geocode-utils.js"></script>-->
 <!-- Custom JS -->
 <script>
@@ -52,24 +59,49 @@
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
         zoom: 8,
-        center: [-103.80, 40.80]
     });
-        let marker = new mapboxgl.Marker()
-            .setLngLat([-103.80, 40.80])
-            .addTo(map);
+        geocode("600 Navarro St #350, San Antonio, TX 78205", myMapBoxKey).then(function(result) {
+            console.log(result);
+            map.setCenter(result);
+            map.setZoom(20);
+        });
+        // let marker = new mapboxgl.Marker()
+        //     .setLngLat([-96.808894, 32.775543])
+        //     .addTo(map);
+        //
+        // let popup = new mapboxgl.Popup()
+        //     .setLngLat([-96.808894, 32.775543])
+        //     .setHTML("<p>Crown Block!</p>")
+        //     .setLngLat([-96.797545, 32.999281])
+        //     .setHTML("<p>Cadot!</p>")
+        //     .setLngLat([-96.829601, 32.953639])
+        //     .setHTML("<p>Table13!</p>")
+        //     .addTo(map)
+        // let popup = new mapboxgl.Popup()
+        //     .setLngLat([-96.797545, 32.999281])
+        //     .setHTML("<p>Crown Block!</p>")
+        //     .addTo(map)
+        // let popup = new mapboxgl.Popup()
+        //     .setLngLat([-96.808894, 32.775543])
+        //     .setHTML("<p>Crown Block!</p>")
+        //     .addTo(map)
 
-        let popup = new mapboxgl.Popup()
-            .setLngLat([-103.80, 40.80])
-            .setHTML("<p>My Fav Grassland!</p>")
-            .addTo(map)
-
-let sliderAction = function(value){
-    $sliderChosen.html(value);
-    $('#map').width(value);
-}
-btnZoomIn.click(function(){
-    $("#slide").value();
-});
+        const zoomFive = document.querySelector(".btn1")
+        zoomFive.addEventListener("click", function (){
+                map.zoom = 0;
+        })
+        const zoomTen = document.querySelector(".btn1")
+        zoomTen.addEventListener("click", function (){
+            map.zoom = 0;
+        })
+        const zoomFifteen = document.querySelector(".btn1")
+        zoomFifteen.addEventListener("click", function (){
+            map.zoom = 0;
+        })
+        const zoomTwenty = document.querySelector(".btn1")
+        zoomTwenty.addEventListener("click", function (){
+            map.zoom = 0;
+        })
 src="https://code.jquery.com/jquery-3.7.0.js"
         integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
         crossOrigin="anonymous"
