@@ -410,5 +410,21 @@
 // alert("hey")
 
 // innerHTML, textContent, & innerText
+(document).ready(function (){
+    "use strict";
 
+    mapboxgl.accessToken = mapboxAccessToken;
+    let coordinates = document.getElementById('coordinates');
+    let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        center: [-98.491142, 29.424349],
+        zoom: 4
+    });
+    let marker = new mapboxgl.Marker({
+        draggable: true
+    })
+        .setLngLat([-98.491142, 29.424349])
+        .addTo(map);
+})
 

@@ -199,6 +199,19 @@
         .sunset-img{
             width: 20px;
         }
+        .coordinates {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            position: absolute;
+            bottom: 40px;
+            left: 10px;
+            padding: 5px 10px;
+            margin: 0;
+            font-size: 11px;
+            line-height: 18px;
+            border-radius: 3px;
+            display: none;
+        }
 
     </style>
     <title>Weather Map</title>
@@ -274,25 +287,25 @@
                         <h3>5 DAYS FORECAST</h3>
                         <div class = "icons  mt-5">
                             <p class="weather" id="day2"></p>
-                            <div class="image"><img src="dots.png" class="imgClass" id="img2"></div>
+                            <div class="image"><img src="" class="imgClass" id="img2"></div>
                             <p class="minValues" id="day2Min">Loading...</p>
                             <p class="maxValues" id="day2Max">Loading...</p>
                         </div>
                         <div class = "icons mt-4">
                             <p class="weather" id="day3"></p>
-                            <div class="image"><img src="dots.png" class="imgClass" id="img3"></div>
+                            <div class="image"><img src="" class="imgClass" id="img3"></div>
                             <p class="minValues" id="day3Min">Loading...</p>
                             <p class="maxValues" id="day3Max">Loading...</p>
                         </div>
                         <div class = "icons mt-4">
                             <p class="weather" id="day4"></p>
-                            <div class="image"><img src="dots.png" class="imgClass" id="img4"></div>
+                            <div class="image"><img src="" class="imgClass" id="img4"></div>
                             <p class="minValues" id="day4Min">Loading...</p>
                             <p class="maxValues" id="day4Max">Loading...</p>
                         </div>
                         <div class = "icons mt-4">
                             <p class="weather" id="day5"></p>
-                            <div class="image"><img src="dots.png" class="imgClass" id="img5"></div>
+                            <div class="image"><img src="" class="imgClass" id="img5"></div>
                             <p class="minValues" id="day5Min">Loading...</p>
                             <p class="maxValues" id="day5Max">Loading...</p>
                         </div>
@@ -301,6 +314,7 @@
             </div>
 <!--            MAP BOX-->
             <div class="col-8 col-bottom-right" id="map"></div>
+            <pre id="coordinates" class="coordinates"></pre>
         </div>
     </div>
 
@@ -328,34 +342,66 @@
     // document.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${latLong[0]}&lon=${latLong[1]}&units=imperial&appid=${weatherAPI}`).done(function(data) {
     //     console.log(data);
     // })
-    function successLocation(position){
-        console.log(position);
-        setupMap([position.coords.longitude, position.coords.latitude])
+
+    // MAPBOX
+    // navigator.geolocation.getCurrentPosition(successLocation,errorLocation,{
+    //     enableHighAccuracy: true
+    // });
+    // function successLocation(position){
+    //     console.log(position);
+    //     setupMap([position.coords.longitude, position.coords.latitude])
+    // }
+    // function errorLocation(){}
+    // function setupMap(center) {
+    //     mapboxgl.accessToken = myMapBoxKey;
+    //     const map = new mapboxgl.Map({
+    //         container: 'map',
+    //         style: 'mapbox://styles/mapbox/streets-v11',
+    //         center: center,
+    //         zoom: 14
+    //     })
+    // }
+
+    // function setupMap(center){}
+    mapboxgl.accessToken = myMapBoxKey;
+    const coordinates = document.getElementById('coordinates');
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/outdoors-v12',
+        center: [0, 0],
+        zoom: 2
+    });
+
+    const marker = new mapboxgl.Marker({
+        draggable: true
+    })
+        .setLngLat([0, 0])
+        .addTo(map);
+
+    function onDragEnd() {
+        const lngLat = marker.getLngLat();
+        coordinates.style.display = 'block';
+        coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+        let latitude = `${lngLat.lat}`;
+        let longitude = `${lngLat.lng}`;
+
+        // let api = `https://api.openweathermap.org/data/2.5/forecast?q=` + newName.value + `lat=${latitude}&lon=${longitude}&appid=${weatherAPI}`;
+        // fetch(api).then(response =>{
+        //     return response.json()
+        // })
+        //     .then(data => {
+        //         console.log(data);
+        //         const {name} = data.city;
+        //         console.log(name);
+        //     })
+
     }
-    function errorLocation(){}
-    function setupMap(center) {
-        mapboxgl.accessToken = myMapBoxKey;
-        let map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11',
-            center: center,
-            zoom: 14
-        })
-        let marker = new mapboxgl.Marker({
-            draggable: true
-        })
-            .setLngLat([-98.4951,29.4246])
-            .addTo(map);
+    // let newCity = data.city.name;
+    marker.on('dragend', onDragEnd);
 
-        // const nav = new mapboxgl.NavigationControl();
-        // map.addControl(nav)
-
-        // let directions = new MapboxDirections({
-        //     accessToken: mapboxgl.accessToken
-        // });
-        // map.addControl(directions, 'top-left');
-    }
-
+    // NAVIGATION BUTTON ON MAP
+    const nav = new mapboxgl.NavigationControl();
+    map.addControl(nav)
 
     const weatherIcon = document.querySelector(".weather-icon");
     const temperatureIcon = document.querySelector(".temperature");
@@ -415,7 +461,7 @@
             .catch(err => alert("Something Went Wrong: Try Checking Your Internet Coneciton"))
     }
     function DefaultScreen(){
-        document.querySelector(".cityInput").defaultValue = "Irving";
+        document.querySelector(".cityInput").defaultValue = "Andorra";
         GetInfo();
     }
 
@@ -433,27 +479,6 @@
     for(let i = 0; i<5; i++){
         document.getElementById("day" + (i+1)).innerHTML = weekday[CheckDay(i)];
     }
-    // MAPBOX
-    navigator.geolocation.getCurrentPosition(successLocation,errorLocation,{
-        enableHighAccuracy: true
-    });
-
-
-    // marker.on('dragend', setWeatherData);
-    // console.log(marker);
-
-    // $('#submitButton').click(function(){
-    //     geocode($('#searchedCity').val(), weatherAPI).then(function(data){
-    //         console.log(data);
-    //         map.setCenter(data);
-    //         marker.setLngLat(data);
-    //         setWeatherData(data[0],data[1])
-    //     });
-    // });
-    // Create a new marker.
-    // const marker = new mapboxgl.Marker()
-    //     .setLngLat([30.5, 50.5])
-    //     .addTo(map);
 
 
 
