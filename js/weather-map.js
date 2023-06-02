@@ -32,7 +32,7 @@
     document.querySelector(".cityName").innerHTML = data.city.name;
     document.querySelector(".sunrise").innerHTML = moment(data.city.sunrise,'X').format('HH:mm a');
     document.querySelector(".sunset").innerHTML = moment(data.city.sunset,'X').format('HH:mm a');
-    document.querySelector(".date").innerHTML = " "  + moment(data.list[0].dt * 1000) + " ";
+    document.querySelector(".date").innerHTML = Date(data.list[0].dt * 1000);
     document.querySelector(".cityInput").innerHTML = data.city.name;
     document.querySelector(".description").innerHTML = data.list[i].weather[0].description.toUpperCase() + " -- ";
     document.querySelector(".main").innerHTML = data.list[i].weather[0].main + "y";
@@ -90,6 +90,7 @@
     document.querySelector(".sunrise").innerHTML = moment(data.city.sunrise,'X').format('HH:mm a');
     document.querySelector(".sunset").innerHTML = moment(data.city.sunset,'X').format('HH:mm a');
     document.querySelector(".date").innerHTML = Date(data.list[0].dt * 1000);
+    //     document.querySelector(".date").innerHTML = ((unixTime + (new Date(data.list[0]).dt.getTimezoneOffset() * 60)) + offset) * 1000;
     document.querySelector(".description").innerHTML = data.list[i].weather[0].description.toUpperCase() + " -- ";
     document.querySelector(".main").innerHTML = data.list[i].weather[0].main + "y";
     document.querySelector(".temp").innerHTML = Number(data.list[i].main.temp - 273.15).toFixed(2) + "°C";

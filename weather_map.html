@@ -19,8 +19,9 @@
     <link rel="stylesheet" href="css/weather-map.css">
     <title>Weather Map</title>
 </head>
-<body onload="DefaultScreen()">
 
+<body onload="DefaultScreen()">
+<div class="page">
     <div class="row">
         <div class="col user-column">
             <div class="col"><img class="user-menu" src="weather-img/menu.png" alt=""></div>
@@ -38,23 +39,23 @@
 <!--            TOP LEFT SECTION-->
             <div class="col-3 col-top-left mb-4">
                 <section>
-                    <div class="row top-left-main">
+                    <div class="row top-left-main mt-4">
                         <div class="col-12">
                             <label for="inputBox"></label>
                             <input id="inputBox" type="text" class="cityInput" placeholder="enter a city name">
                             <button type="button" onclick="GetInfo()"><img class="button-image" src="weather-img/button.png" alt=""></button>
                         </div>
-                        <div class="col-6 top-left-sub mt-3">
+                        <div class="col-6 top-left-sub mt-4">
                             <img class="location-image" src="weather-img/location.png" alt=""><p class="cityName"></p>
                         </div>
-                        <div class="col-6 mt-3">
+                        <div class="col-6 mt-4">
                             <img src="" alt="" class="weather-icon">
                         </div>
-                        <div class="col-6 top-left-sub mt-3">
+                        <div class="col-6 top-left-sub mt-4">
                             <img src="" alt="" class="temperature">
                             <h5 class="temp">Loading...</h5>
                         </div>
-                        <div class="col-6 mt-3">
+                        <div class="col-6 mt-4">
                             <h4 class="main"></h4>
                         </div>
                     </div>
@@ -65,35 +66,39 @@
             <div class="col-8 col-top-right mb-4">
                 <section>
                     <div class="row highlight-main">
-                        <div class="col-12 highlight-sub">
+                        <div class="col-12 highlight-sub mb-4">
                             <h6 class="description">Loading...</h6>
-                            <p class="cityName"></p>
+
                             <h6 class="date"></h6>
                         </div>
 
                         <div class="col-3 highlight">
-                            <img class="humidity-image" src="weather-img/sunrise.png" alt="">
+                            <img class="humidity-image mb-1" src="weather-img/sunrise.png" alt="">
                             <h5>Sunrise</h5>
                             <h5 class="sunrise">Sunrise</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         </div>
 
                         <div class="col-3 highlight">
-                            <img class="humidity-image" src="weather-img/humidity.png" alt="">
+                            <img class="humidity-image mb-1" src="weather-img/humidity.png" alt="">
                             <h5>Humidity</h5>
                             <h5 class="humidity">Humidity</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         </div>
 
                         <div class="col-3 highlight">
-                            <img class="humidity-image" src="weather-img/wind.png" alt="">
+                            <img class="humidity-image mb-1" src="weather-img/wind.png" alt="">
                             <h5>Wind Speed</h5>
                             <h5 class="wind">Wind Speed</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         </div>
 
                         
                         <div class="col-3 highlight">
-                            <img class="humidity-image" src="weather-img/sunset.png" alt="">
+                            <img class="humidity-image mb-1" src="weather-img/sunset.png" alt="">
                             <h5>Sunset</h5>
                             <h5 class="sunset">Sunset</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         </div>
 
 
@@ -105,7 +110,7 @@
             <div class="col-3 col-bottom-left">
 
                 <section>
-                            <div class="bottom-left-main"><h4 class="forecast">5 DAYS FORECAST</h4>
+                            <div class="bottom-left-main"><h4 class="forecast mb-5">5 DAYS FORECAST</h4>
                             <div class = "icons mt-5">
                                 <p class="weather" id="day1"></p>
                                 <div class="image"><img src="" class="imgClass" id="img1"></div>
@@ -169,6 +174,7 @@
 
     <script src="js/weather-map.js"></script>
 
-
+</div>
 </body>
+
 </html>
