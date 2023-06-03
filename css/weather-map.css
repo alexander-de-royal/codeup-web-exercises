@@ -4,7 +4,7 @@ body{
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
     animation: gradient 20s ease infinite;
-    margin: 20px 0 0 50px;
+    margin: 4git 0px 0 0 50px;
 }
 @keyframes gradient {
     0% {
@@ -22,9 +22,13 @@ section{
 }
 /*USER COLUMN*/
 .user-column{
-    background-color: rgba(255,255,255,0.5);
-    border: 1px solid white;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.2);
     border-radius: 20px;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-right: 2px solid rgba(255,255,255,0.2);
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
     padding-top: 35px;
     display: flex;
     flex-direction: column;
@@ -36,10 +40,14 @@ section{
 }
 /*TOP LEFT SECTION*/
 .col-top-left{
-    background-color: rgba(255,255,255,0.5);
-    border: 1px solid white;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.2);
     border-radius: 20px;
-    height: 35vh;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-right: 2px solid rgba(255,255,255,0.2);
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    /*height: 30vh;*/
 }
 button{
     background-color: transparent;
@@ -74,10 +82,14 @@ p.cityName{
 }
 /*BOTTOM LEFT SECTION*/
 .col-bottom-left{
-    background-color: rgba(255,255,255,0.5);
-    border: 1px solid white;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.2);
     border-radius: 20px;
-    height: 58vh;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-right: 2px solid rgba(255,255,255,0.2);
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    height: 56vh;
 }
 .forecast{
     letter-spacing: 0.19em;
@@ -87,8 +99,13 @@ p.cityName{
     border-bottom: 1px solid white;
 }
 .col-bottom-right{
-    border: 1px solid white;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.2);
     border-radius: 20px;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-right: 2px solid rgba(255,255,255,0.2);
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
 }
 .icons{
     display: flex;
@@ -98,9 +115,13 @@ p.cityName{
 }
 /*TOP RIGHT SECTION*/
 .col-top-right{
-    background-color: rgba(255,255,255,0.5);
-    border: 1px solid white;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.2);
     border-radius: 20px;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-right: 2px solid rgba(255,255,255,0.2);
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
 }
 .humidity-image{
     width: 60px;
@@ -151,6 +172,7 @@ p.cityName{
     border-radius: 3px;
     display: none;
 }
+
 /*FADE IN TRANSITION*/
 @-webkit-keyframes fade {
     0%   { opacity: 0; }
