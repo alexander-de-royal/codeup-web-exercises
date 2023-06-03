@@ -31,6 +31,7 @@
             <div class="col"><img class="user-menu" src="weather-img/calendar.png" alt=""></div>
             <div class="col"><img class="user-menu mt-4" src="weather-img/notification.png" alt=""></div>
             <div class="col"><img class="user-menu" src="weather-img/girl.png" alt=""></div>
+
         </div>
 
 <!--        THIS COLUMN HOLDS TOP LEFT, TOP RIGHT, BOTTOM LEFT AND BOTTOM RIGHT-->
@@ -41,9 +42,12 @@
                 <section>
                     <div class="row top-left-main mt-4">
                         <div class="col-12">
-                            <label for="inputBox"></label>
-                            <input id="inputBox" type="text" class="cityInput" placeholder="enter a city name">
-                            <button type="button" onclick="GetInfo()"><img class="button-image" src="weather-img/button.png" alt=""></button>
+                            <div class="search">
+                                <input type="search" class="cityInput" placeholder="Enter a city name">
+<!--                                <input type="search" class="cityInput" placeholder="enter a city name">-->
+                                <button type="button" onclick="GetInfo()"><img class="button-image" src="weather-img/button.png" alt=""></button>
+                            </div>
+
                         </div>
                         <div class="col-6 top-left-sub mt-4">
                             <img class="location-image" src="weather-img/location.png" alt=""><p class="cityName"></p>
@@ -67,8 +71,8 @@
                 <section>
                     <div class="row highlight-main">
                         <div class="col-12 highlight-sub mb-4">
-                            <h6 class="description">Loading...</h6>
-
+                            <h6>Today's Highlights</h6>
+<!--                            <h6 class="description">Loading...</h6>-->
                             <h6 class="date"></h6>
                         </div>
 

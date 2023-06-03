@@ -47,11 +47,11 @@ section{
     border-right: 2px solid rgba(255,255,255,0.2);
     border-bottom: 2px solid rgba(255,255,255,0.2);
     backdrop-filter: blur(10px);
-    /*height: 30vh;*/
 }
 button{
     background-color: transparent;
     border: none;
+    margin-left: 15px;
 }
 p.cityName{
     margin-bottom: 0;
@@ -74,8 +74,12 @@ p.cityName{
     border: none;
     outline: none;
     background: transparent;
-    border-bottom: 1px solid #DFF6FF;
+    border-bottom: 1px solid white;
     color: white;
+    transition: .5s ease;
+}
+.cityInput:hover{
+    transform: scale(110%);
 }
 .button-image{
     width: 20px;
@@ -126,12 +130,13 @@ p.cityName{
     width: 60px;
 }
 .highlight-sub{
+    margin-top: 8px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     color: white;
-    letter-spacing: .19em;
+    /*letter-spacing: .19em;*/
 }
 .highlight{
     display: flex;
@@ -193,3 +198,4 @@ p.cityName{
     animation-duration: 3s;
     animation-fill-mode: forwards;
 }
+

@@ -1,4 +1,3 @@
-
 //MAP BOX DISPLAY
     mapboxgl.accessToken = myMapBoxKey;
     const map = new mapboxgl.Map({
@@ -7,7 +6,6 @@
     center: [0, 0],
     zoom: 2
 });
-
     const marker = new mapboxgl.Marker({
     draggable: true
 })
@@ -29,19 +27,19 @@
 
     // LOOP THROUGH TO GET DATA FOR ALL DAYS
     for( let i = 0; i<5; i++){
-    document.querySelector(".cityName").innerHTML = data.city.name;
-    document.querySelector(".sunrise").innerHTML = moment(data.city.sunrise,'X').format('HH:mm a');
-    document.querySelector(".sunset").innerHTML = moment(data.city.sunset,'X').format('HH:mm a');
-    document.querySelector(".date").innerHTML = Date(data.list[0].dt * 1000);
-    document.querySelector(".cityInput").innerHTML = data.city.name;
-    document.querySelector(".description").innerHTML = data.list[i].weather[0].description.toUpperCase() + " -- ";
-    document.querySelector(".main").innerHTML = data.list[i].weather[0].main + "y";
-    document.querySelector(".temp").innerHTML = Number(data.list[i].main.temp - 273.15).toFixed(2) + "°C";
-    document.querySelector(".humidity").innerHTML = Number(data.list[i].main.humidity) + "%";
-    document.querySelector(".wind").innerHTML = Number(data.list[i].wind.speed) + " km/h";
-    document.getElementById("day" + (i+1) + "Min").innerHTML = "High:" + Number(data.list[i].main.temp_min - 273.15).toFixed(1);
-    document.getElementById("day" + (i+1) + "Max").innerHTML = "Low:" + Number(data.list[i].main.temp_max - 273.15).toFixed(2) + "°C";
-    document.getElementById("img" + (i+1)).src = "https://openweathermap.org/img/wn/"+ data.list[i].weather[0].icon + ".png";
+        document.querySelector(".cityName").innerHTML = data.city.name;
+        document.querySelector(".sunrise").innerHTML = data.city.sunrise;
+        document.querySelector(".sunrise").innerHTML = moment(data.city.sunrise,'X').format('HH:mm a');
+        document.querySelector(".sunset").innerHTML = moment(data.city.sunset,'X').format('HH:mm a');
+        document.querySelector(".date").innerHTML = " -- " + Date(data.list[0].dt * 1000);
+        document.querySelector(".main").innerHTML = data.list[i].weather[0].main + "y";
+        document.querySelector(".temp").innerHTML = Number(data.list[i].main.temp - 273.15).toFixed(2) + "°C";
+        document.querySelector(".humidity").innerHTML = Number(data.list[i].main.humidity) + "%";
+        document.querySelector(".wind").innerHTML = Number(data.list[i].wind.speed) + " km/h";
+        document.getElementById("day" + (i+1) + "Min").innerHTML = "High:" + Number(data.list[i].main.temp_min - 273.15).toFixed(1);
+        document.getElementById("day" + (i+1) + "Max").innerHTML = "Low:" + Number(data.list[i].main.temp_max - 273.15).toFixed(2) + "°C";
+        document.getElementById("img" + (i+1)).src = "https://openweathermap.org/img/wn/"+ data.list[i].weather[0].icon + ".png";
+
 
         if(data.list[i].weather[0].main === "Clouds"){
             weatherIcon.src = "weather-img/broken-clouds.svg";
@@ -86,12 +84,10 @@
     .then(response => response.json())
     .then(data => {
     for( let i = 0; i<5; i++){
-    // document.querySelector(".sunrise").innerHTML = data.city.sunrise;
+    document.querySelector(".sunrise").innerHTML = data.city.sunrise;
     document.querySelector(".sunrise").innerHTML = moment(data.city.sunrise,'X').format('HH:mm a');
     document.querySelector(".sunset").innerHTML = moment(data.city.sunset,'X').format('HH:mm a');
-    document.querySelector(".date").innerHTML = Date(data.list[0].dt * 1000);
-    //     document.querySelector(".date").innerHTML = ((unixTime + (new Date(data.list[0]).dt.getTimezoneOffset() * 60)) + offset) * 1000;
-    document.querySelector(".description").innerHTML = data.list[i].weather[0].description.toUpperCase() + " -- ";
+    document.querySelector(".date").innerHTML = " -- " + Date(data.list[0].dt * 1000);
     document.querySelector(".main").innerHTML = data.list[i].weather[0].main + "y";
     document.querySelector(".temp").innerHTML = Number(data.list[i].main.temp - 273.15).toFixed(2) + "°C";
     document.querySelector(".humidity").innerHTML = Number(data.list[i].main.humidity) + "%";
@@ -123,7 +119,7 @@
 }})}
     //USES A SPECIFIC LOCATION AS DEFAULT WHEN PAGE LOADS
     function DefaultScreen(){
-    document.querySelector(".cityInput").defaultValue = "Andorra";
+    document.querySelector(".cityInput").defaultValue = "Dallas";
     GetInfo();
 }
     //Getting and displaying the text for the upcoming five days of the week
