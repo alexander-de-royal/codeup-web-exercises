@@ -45,12 +45,14 @@
                             <div class="search">
                                 <input type="search" class="cityInput" placeholder="Enter a city name">
 <!--                                <input type="search" class="cityInput" placeholder="enter a city name">-->
-                                <button type="button" onclick="GetInfo()"><img class="button-image" src="weather-img/button.png" alt=""></button>
+                                <button id="#submitInput" type="button" onclick="GetInfo()"><img class="button-image" src="weather-img/button.png" alt=""></button>
                             </div>
 
                         </div>
                         <div class="col-6 top-left-sub mt-4">
-                            <img class="location-image" src="weather-img/location.png" alt=""><p class="cityName"></p>
+                            <img class="location-image" src="weather-img/location.png" alt="">
+                            <div id="loading"></div>
+                            <p class="cityName"></p>
                         </div>
                         <div class="col-6 mt-4">
                             <img src="" alt="" class="weather-icon">

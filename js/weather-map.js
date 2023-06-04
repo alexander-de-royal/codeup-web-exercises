@@ -72,19 +72,44 @@
     // CREATES ICON ON WEB PAGE BASED ON WEATHER AND TEMPERATURE
     const weatherIcon = document.querySelector(".weather-icon");
     const temperatureIcon = document.querySelector(".temperature");
+    const btn = document.querySelector("#submitInput");
+
+// // adding event listener to button
+// btn.addEventListener("click", GetInfo);
+//
+// // selecting loading div
+// const loader = document.querySelector("#loading");
+//
+// // showing loading
+// function displayLoading() {
+//     loader.classList.add("display");
+//     // to stop loading after some time
+//     setTimeout(() => {
+//         loader.classList.remove("display");
+//     }, 5000);
+// }
+//
+// // hiding loading
+// function hideLoading() {
+//     loader.classList.remove("display");
+// }
 
     //FUNCTION THAT FETCHES API USING CITY NAME AND DISPLAYS RESULT
     function GetInfo() {
+        // displayLoading()
+        // let loader = document.getElementById('loading');
+        // document.getElementById('loading').innerHTML = loader;
     let newName = document.querySelector(".cityInput");
     let cityName = document.querySelector(".cityName");
+
     cityName.innerHTML = newName.value.toUpperCase();
     fetch('https://api.openweathermap.org/data/2.5/forecast?q='
     + newName.value
-    +'&appid=40cb7f55adbe6b3302d4780d0ead3739')
+    +'&appid=' + weatherAPI)
     .then(response => response.json())
     .then(data => {
+        // hideLoading()
     for( let i = 0; i<5; i++){
-    document.querySelector(".sunrise").innerHTML = data.city.sunrise;
     document.querySelector(".sunrise").innerHTML = moment(data.city.sunrise,'X').format('HH:mm a');
     document.querySelector(".sunset").innerHTML = moment(data.city.sunset,'X').format('HH:mm a');
     document.querySelector(".date").innerHTML = " -- " + Date(data.list[0].dt * 1000);
