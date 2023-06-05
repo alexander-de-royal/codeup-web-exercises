@@ -3,15 +3,18 @@
     const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/outdoors-v12',
-    center: [0, 0],
-    zoom: 2
+    center: [-96.808901, 32.775373],
+    zoom: 15
 });
+    //THIS IS WILL CREATE DRAG THING IN MAP
     const marker = new mapboxgl.Marker({
     draggable: true
 })
-    .setLngLat([0, 0])
+        //THIS WILL SET DRAG TO A SET CO-ORDINATE
+    .setLngLat([-96.808901, 32.775373])
     .addTo(map);
 
+    //GET LONGITUDE AND LATITUDE AND PLUG IT INTO THE API
     function onDragEnd() {
     const lngLat = marker.getLngLat();
     let latitude = `${lngLat.lat}`;
@@ -28,7 +31,6 @@
     // LOOP THROUGH TO GET DATA FOR ALL DAYS
     for( let i = 0; i<5; i++){
         document.querySelector(".cityName").innerHTML = data.city.name;
-        document.querySelector(".sunrise").innerHTML = data.city.sunrise;
         document.querySelector(".sunrise").innerHTML = moment(data.city.sunrise,'X').format('HH:mm a');
         document.querySelector(".sunset").innerHTML = moment(data.city.sunset,'X').format('HH:mm a');
         document.querySelector(".date").innerHTML = " -- " + Date(data.list[0].dt * 1000);
@@ -74,25 +76,6 @@
     const temperatureIcon = document.querySelector(".temperature");
     const btn = document.querySelector("#submitInput");
 
-// // adding event listener to button
-// btn.addEventListener("click", GetInfo);
-//
-// // selecting loading div
-// const loader = document.querySelector("#loading");
-//
-// // showing loading
-// function displayLoading() {
-//     loader.classList.add("display");
-//     // to stop loading after some time
-//     setTimeout(() => {
-//         loader.classList.remove("display");
-//     }, 5000);
-// }
-//
-// // hiding loading
-// function hideLoading() {
-//     loader.classList.remove("display");
-// }
 
     //FUNCTION THAT FETCHES API USING CITY NAME AND DISPLAYS RESULT
     function GetInfo() {
