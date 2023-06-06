@@ -4,7 +4,7 @@
     container: 'map',
     style: 'mapbox://styles/mapbox/outdoors-v12',
     center: [-96.808901, 32.775373],
-    zoom: 15
+    zoom: 11
 });
     //THIS IS WILL CREATE DRAG THING IN MAP
     const marker = new mapboxgl.Marker({
@@ -79,9 +79,6 @@
 
     //FUNCTION THAT FETCHES API USING CITY NAME AND DISPLAYS RESULT
     function GetInfo() {
-        // displayLoading()
-        // let loader = document.getElementById('loading');
-        // document.getElementById('loading').innerHTML = loader;
     let newName = document.querySelector(".cityInput");
     let cityName = document.querySelector(".cityName");
 
@@ -91,8 +88,11 @@
     +'&appid=' + weatherAPI)
     .then(response => response.json())
     .then(data => {
-        // hideLoading()
     for( let i = 0; i<5; i++){
+        const la = data.city.coord.lat;
+        const lo = data.city.coord.lon;
+        console.log(la,lo)
+
     document.querySelector(".sunrise").innerHTML = moment(data.city.sunrise,'X').format('HH:mm a');
     document.querySelector(".sunset").innerHTML = moment(data.city.sunset,'X').format('HH:mm a');
     document.querySelector(".date").innerHTML = " -- " + Date(data.list[0].dt * 1000);
@@ -123,6 +123,20 @@
         } else if (data.list[i].main.temp < 20){
             temperatureIcon.src = "weather-img/low.png";
         }
+        // mapboxgl.accessToken = myMapBoxKey;
+        // const map = new mapboxgl.Map({
+        //     container: 'map',
+        //     style: 'mapbox://styles/mapbox/outdoors-v12',
+        //     center: [lo, la],
+        //     zoom: 11
+        // });
+        // //THIS IS WILL CREATE DRAG THING IN MAP
+        // const marker = new mapboxgl.Marker({
+        //     draggable: true
+        // })
+        //     //THIS WILL SET DRAG TO A SET CO-ORDINATE
+        //     .setLngLat([lo, la])
+        //     .addTo(map);
 
 }})}
     //USES A SPECIFIC LOCATION AS DEFAULT WHEN PAGE LOADS
