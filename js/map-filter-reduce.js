@@ -64,6 +64,9 @@ console.log(longestUserEmail)
 
 // TODO 6:
 const userNames = users.reduce(function(userNamesString, user){
+    if(index !== users.length - 1){
+        return userNamesString + user.name + ", "
+    }
     return userNamesString + user.name + ", "
 }, "")
 console.log(userNames);
