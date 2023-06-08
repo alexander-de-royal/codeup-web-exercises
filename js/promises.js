@@ -81,6 +81,14 @@ fetch("https://api.github.com/users/alexander-de-royal-events/public", {headers:
     .then(response => response.json())
     .then(data => console.log(new date(data.commit.author.date)))
 
+const wait = ((milliseconds) => {
+    return new Promise((resolve, reject) => {
+        setTimeout( () => {
+            resolve(`This will show up in ${milliseconds/1000} second(s)`)
+        });
+    });
+});
+wait(3000).then(msg => console.log(msg));
 
 
 
