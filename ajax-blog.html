@@ -5,9 +5,46 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Ajax Blog</title>
+    <style>
+        body{background-color: #3740f0; color: whitesmoke}
+
+    </style>
 </head>
+
 <body>
-<div class="div" id="posts"></div>
+
+<h1>My Blog</h1>
+
+<div id="posts">
+    <ul>
+        <li>Title</li>
+        <li>Content</li>
+        <li>Categories</li>
+        <li>Date</li>
+    </ul>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+<script>
+    function blog (){
+        $.post({
+            url: 'data/blog.json',
+        }).done(function(data){
+            console.log(data);
+            $("#posts").empty();
+
+            data.forEach(function(post){
+                let listHeading = $('<ul>');
+                listHeading.append($('<li>' + post.title + '</li>'));
+                listHeading.append($('<li>' + post.content + '</li>'));
+                listHeading.append($('<li>' + post.categories + '</li>'));
+                listHeading.append($('<li>' + post.date + '</li>'));
+                $("#posts").append(listHeading);
+            });
+        });
+        }
+</script>
 </body>
 </html>
